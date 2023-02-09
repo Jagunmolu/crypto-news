@@ -4,9 +4,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-tk2#10^@l))=ilc0e@g1+@rz*84td8n^tt!60*lvn51qw_j#*3"
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://crypto-news-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'crypto-news-production.up.railway.app']
 
 
 INSTALLED_APPS = [
