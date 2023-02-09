@@ -22,3 +22,7 @@ urlpatterns = [
     path('guide/', include('guide.urls')),
     path('exclusive/', include('exclusive.urls')),
 ]
+
+urlpatterns += [
+    path('api-auth/', include('rest_framework.urls')),
+]
