@@ -1,5 +1,4 @@
 from django.db import models
-# from django.utils import timesince
 
 
 class Guide(models.Model):
@@ -17,8 +16,8 @@ class Guide(models.Model):
     )
     content = models.TextField()
 
-    # class Meta:
-    #     ordering = ['-created']
+    class Meta:
+        ordering = ['-id']
 
     def __str__(self):
         return f'{self.title}\n\n{self.content[:50]}'

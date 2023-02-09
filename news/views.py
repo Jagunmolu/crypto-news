@@ -1,12 +1,13 @@
+from django.contrib.auth.models import User
 from django.http import Http404
-from rest_framework import status, generics
+from permissions import IsOwnerOrReadOnly
+from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.contrib.auth.models import User
-from rest_framework import permissions
-from permissions import IsOwnerOrReadOnly
+
 from news.models import Post
-from news.serializers import PostDetailSerializer, PostListSerializer, UserSerializer
+from news.serializers import (PostDetailSerializer, PostListSerializer,
+                              UserSerializer)
 
 
 class PostListView(APIView):

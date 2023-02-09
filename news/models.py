@@ -1,8 +1,4 @@
 from django.db import models
-# from django.utils import timesince
-# from pygments.lexers import get_lexer_by_name
-# from pygments.formatters.html import HtmlFormatter
-# from pygments import highlight
 
 
 class Post(models.Model):
@@ -23,31 +19,12 @@ class Post(models.Model):
     )
     content = models.TextField()
     owner = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE)
-    # highlighted = models.TextField()
 
     class Meta:
         ordering = ['-created']
 
     def __str__(self):
         return f'{self.title} || {self.content[:50]}'
-
-    # def save(self, *args, **kwargs):
-    #     """
-    #     Use the `pygments` library to create a highlighted HTML
-    #     representation of the code snippet.
-    #     """
-    #     lexer = get_lexer_by_name(self.language)
-    #     linenos = 'table' if self.linenos else False
-    #     options = {'title': self.title} if self.title else {}
-    #     formatter = HtmlFormatter(style=self.style, linenos=linenos,
-    #                             full=True, **options)
-    #     self.highlighted = highlight(self.code, lexer, formatter)
-    #     super().save(*args, **kwargs)
-
-
-    # @property
-    # def timesince(self):
-    #     return timesince.timesince(self.timestamp)
 
 
 class Comments(models.Model):
